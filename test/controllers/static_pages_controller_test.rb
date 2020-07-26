@@ -15,7 +15,8 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   # Homeページのテスト
   test "should get home" do
     # GETリクエストをhomeアクションに対して発行 (=送信) せよ
-    get static_pages_home_url
+    # get static_pages_home_url
+    get root_path
     # そうすれば、リクエストに対するレスポンスは[成功]になるはず
     assert_response :success
     # <title>タグ内に『Home | Ruby on Rails Tutorial Sample App』という文字列があるかどうかをチェック
@@ -26,25 +27,25 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get help" do
-    get static_pages_help_url
+    get help_path
     assert_response :success
     # assert_select "title", "Help | Ruby on Rails Tutorial Sample App"
     # assert_select "title", "Help | #{@base_title}"
-    assert_select "title", "Ruby on Rails Tutorial Sample App"
+    assert_select "title", "Help | Ruby on Rails Tutorial Sample App"
   end
 
   test "should get about" do
-    get static_pages_about_url
+    get about_path
     assert_response :success
     # assert_select "title", "About | Ruby on Rails Tutorial Sample App"
     # assert_select "title", "About | #{@base_title}"
-    assert_select "title", "Ruby on Rails Tutorial Sample App"
+    assert_select "title", "About | Ruby on Rails Tutorial Sample App"
   end
 
   test "should get contact" do
-    get static_pages_contact_url
+    get contact_path
     assert_response :success
     # assert_select "title", "Contact | #{@base_title}"
-    assert_select "title", "Ruby on Rails Tutorial Sample App"
+    assert_select "title", "Contact | Ruby on Rails Tutorial Sample App"
   end
 end
