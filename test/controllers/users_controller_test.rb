@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
 
   def setup
-    @usr = users(:michael)
+    @user = users(:michael)
   end
 
   test "should get new" do
